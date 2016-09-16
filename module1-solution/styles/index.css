@@ -1,14 +1,15 @@
-.message {
-  border-radius: 4px;
-  padding: 5px;
+.form-control.success {
+  border: 1px solid green;
+}
+
+.form-control.error {
+  border: 1px solid red;
 }
 
 .message.success {
   color: green;
-  border: 1px solid green;
 }
 
 .message.error {
   color: red;
-  border: 1px solid red;
 }

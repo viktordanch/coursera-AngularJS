@@ -19,14 +19,13 @@
          <div class="form-group">
              <input id="lunch-menu" type="text" ng-model="allItems"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
+             class="form-control {{userMessage.status}}">
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="checkLunch()">Check If Too Much</button>
          </div>
          <div class="form-group message {{userMessage.status}}">
            {{userMessage.text}}
-           <!-- Your message can go here. -->
          </div>
    </div>
 
