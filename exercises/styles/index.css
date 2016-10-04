@@ -1,0 +1,15 @@
+.form-control.success {
+  border: 1px solid green;
+}
+
+.form-control.error {
+  border: 1px solid red;
+}
+
+.message.success {
+  color: green;
+}
+
+.message.error {
+  color: red;
+}
