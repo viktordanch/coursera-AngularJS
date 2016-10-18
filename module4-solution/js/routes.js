@@ -17,22 +17,27 @@
       })
       .state('categories', {
         url: '/categories',
-        templateUrl: 'js/templates/main-categories.template.html',
+        templateUrl: 'js/components/categories/templates/main-categories.template.html',
         controller: 'MainCategoriesController as mainCategories',
         resolve: {
           categories: ['MenuDataService', function (MenuDataService) {
-            return MenuDataService.getAllCategories();
+            return MenuDataService.getAllCategories().then(function (categories) {
+               return categories.data;
+            });
           }]
         }
       })
 
       .state('items', {
         url: '/categories/{categoryShortName}/items',
-        templateUrl: 'js/templates/main-items.template.html',
+        templateUrl: 'js/components/items/templates/main-items.template.html',
         controller: 'MainItemsController as mainItems',
         resolve: {
           items: ['MenuDataService', '$stateParams', function (MenuDataService, $stateParams) {
-            return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+            return MenuDataService.getItemsForCategory($stateParams.categoryShortName)
+              .then(function (items) {
+                return items.data.menu_items;
+              });
           }]
         }
       });
